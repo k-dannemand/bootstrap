@@ -1,4 +1,4 @@
-- name: Install dnf packages
+- name: Install packages
   package:
     name:
       - git
@@ -9,3 +9,4 @@
       - mosh
       - zsh
       - flatpak
+      - gnome-tweaks
