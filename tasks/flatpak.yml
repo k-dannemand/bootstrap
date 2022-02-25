@@ -1,6 +1,4 @@
 - name: Install flatpaks
   flatpak:
-    name:  
-      - com.discordapp.Discord
-      - com.getpostman.Postman  
+    name: ['com.discordapp.Discord', 'com.getpostman.Postman']  
     state: present
