@@ -1,4 +1,6 @@
-- name: Install the spotify flatpak
+- name: Install flatpaks
   flatpak:
-    name:  com.discordapp.Discord
+    name:  
+      - com.discordapp.Discord
+      - com.getpostman.Postman  
     state: present
