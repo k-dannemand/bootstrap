@@ -1,4 +1,4 @@
 - name: Install packages
-  dnf: name={{item}}
-  with_items:
-    - tig
+  dnf:
+    name:
+      - tig
