@@ -1,9 +1,3 @@
-- name: Enable the RPM Fusion repository
-  dnf:
-    name: "https://download1.rpmfusion.org/free/fedora/rpmfusion-free-release-{{ansible_distribution_major_version}}.noarch.rpm"
-    state: present
-  when: ansible_distribution == 'Fedora'
-
 - name: Create 1password folder
   ansible.builtin.file:
     path: /opt/1Password
