@@ -1,5 +1,5 @@
 - name: Install dnf packages
-  dnf:
+  package:
     name:
       - git
       - tig
