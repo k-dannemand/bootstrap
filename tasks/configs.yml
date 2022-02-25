@@ -35,3 +35,13 @@
   tags:
     - dotfiles
     - terminator
+
+- name: copy git dotfiles
+  copy:
+    src: "configs/gitconfig"
+    dest: "{{ home_path }}/.gitconfig"
+    mode: preserve
+  become: false
+  tags:
+    - dotfiles
+
