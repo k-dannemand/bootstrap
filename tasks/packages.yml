@@ -1,4 +1,30 @@
+- name: Enable the RPM Fusion repository
+  dnf:
+    name: "https://download1.rpmfusion.org/free/fedora/rpmfusion-free-release-{{ansible_distribution_major_version}}.noarch.rpm"
+    state: present
+  when: ansible_distribution == 'Fedora'
+
+- name: Create 1password folder
+  ansible.builtin.file:
+    path: /opt/1Password
+    state: directory
+    mode: '0755'
+
+- name: Download 1password 
+  get_url:
+    url: https://downloads.1password.com/linux/tar/stable/x86_64/1password-latest.tar.gz
+    dest: /opt/1password
+    mode: '0755'
+
+- name: Extract 1password
+  ansible.builtin.unarchive:
+    src: /opt/1password/1password-latest.tar.gz
+    dest: /opt/1password
+
 - name: Install dnf packages
   dnf:
     name:
+      - git
       - tig
+      - flameshot
+      - terminator
