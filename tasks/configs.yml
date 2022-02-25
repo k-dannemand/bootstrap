@@ -1,0 +1,37 @@
+---
+- name: check if home directory exists
+  stat:
+    path: "{{ home_path }}"
+  become: false
+  register: home
+  tags: dotfiles
+
+- name: check if terminator directory exists
+  stat:
+    path: "{{ home_path }}/.config/terminator"
+  become: false
+  register: terminator
+  tags:
+    - dotfiles
+    - terminator
+
+- name: create terminator directory
+  file:
+    path: "{{ home_path }}/.config/terminator"
+    state: directory
+    mode: 0755
+  become: false
+  when: not terminator.stat.exists
+  tags:
+    - dotfiles
+    - terminator
+
+- name: copy terminator dotfiles
+  copy:
+    src: "configs/terminator/config"
+    dest: "{{ home_path }}/.config/terminator/config"
+    mode: preserve
+  become: false
+  tags:
+    - dotfiles
+    - terminator
