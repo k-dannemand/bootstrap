@@ -1,4 +1,4 @@
- - name: Install multiple packages
-   community.general.flatpak:
-     name:
-       - com.discordapp.Discord
+- name: Install multiple packages
+  community.general.flatpak:
+    name:
+      - com.discordapp.Discord
