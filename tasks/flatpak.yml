@@ -1,5 +1,4 @@
-- name: Install the gedit package from flathub for current user
-  community.general.flatpak:
-    name: com.discordapp.Discord
+- name: Install the spotify flatpak
+  flatpak:
+    name:  com.discordapp.Discord
     state: present
-    method: user
