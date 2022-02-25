@@ -1,20 +1,3 @@
-- name: Create 1password folder
-  ansible.builtin.file:
-    path: /etc/1Password
-    state: directory
-    mode: '0755'
-
-- name: Download 1password 
-  get_url:
-    url: https://downloads.1password.com/linux/tar/stable/x86_64/1password-latest.tar.gz
-    dest: /etc/1password/1password.tar.gz
-    mode: '0755'
-
-- name: Extract 1password
-  ansible.builtin.unarchive:
-    src: /etc/1password/1password-latest.tar.gz
-    dest: /etc/1password/
-
 - name: Install dnf packages
   dnf:
     name:
@@ -22,3 +5,6 @@
       - tig
       - flameshot
       - terminator
+      - vim
+      - mosh
+
