@@ -1,4 +1,24 @@
-- name: Install flatpaks
+- name: Install discord flatpak
   flatpak:
     name: com.discordapp.Discord
+    state: present
+
+- name: Install postman flatpak
+  flatpak:
+    name: com.getpostman.Postman
+    state: present
+
+- name: Install slack flatpak
+  flatpak:
+    name: com.slack.Slack
+    state: present
+
+- name: Install Spotify flatpak
+  flatpak:
+    name: com.slack.Slack
+    state: present
+
+- name: Install VSCode flatpak
+  flatpak:
+    name: com.visualstudio.code
     state: present
