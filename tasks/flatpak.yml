@@ -1,3 +1,12 @@
+- name: is flatpak installed?
+  ansible.builtin.stat:
+    path: /usr/bin/flatpak
+  register: p
+- name: Print a debug message
+  ansible.builtin.debug:
+    msg: "Path exists and is a directory"
+  when: p.stat.isdir is defined and p.stat.isdir
+
 - name: Install discord flatpak
   flatpak:
     name: com.discordapp.Discord
