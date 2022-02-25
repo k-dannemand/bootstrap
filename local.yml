@@ -3,7 +3,7 @@
    connection: local
    become: true
    vars_files:
-     - vars/main.yaml
+     - vars/main.yml
    pre_tasks:
      - name: update dnf
        dnf: update_cache=yes
